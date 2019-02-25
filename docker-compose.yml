@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db2:
+    image: rubensan112/postgres_db3
+    ports:
+      - "5432:5432"
+    volumes:
+      - db1data:/var/lib/postgresql/data #Es decir relaciona la primera parte (Local) /var/lib/docker/volumes/, con la carpeta dentro del contenedor (segund parte). Relaciona el volumen.
+
+  backend:
+    image: rubensan112/vita53
+    ports:
+      - "8000:8000"
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db2
+
+  frontend:
+    image: rubensan112/vita_front7
+    ports:
+      - "8080:8080"
+    command: bash -c "npm run devDocker"
+
+#Esta parte de abajo crea el volumen. Tambien se puede hacer por comandos.
+volumes:
+  db1data:

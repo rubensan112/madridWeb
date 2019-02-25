@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% with title="TASP" %}
+        <title>{{ title }}</title>
+    {% endwith %}
+    <style>
+        @font-face {
+            font-family: 'Telefonica';
+             /* IE9 Compat Modes */
+            src: url('{% static "fonts/TelefonicaWeb-Regular.eot" %}');
+            /* Super Modern Browsers */
+            src: url('{% static "fonts/TelefonicaWeb-Regular.woff2" %}') format('woff2'),
+            /* Pretty Modern Browsers */
+            url('{% static "fonts/TelefonicaWeb-Regular.woff" %}') format('woff'),
+            /* Safari, Android, iOS */
+            url('{% static "fonts/TelefonicaWeb-Regular.ttf" %}')  format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('{% static "fonts/glyphicons-halflings-regular.eot" %}');
+            src: url('{% static "fonts/glyphicons-halflings-regular.eot" %}?#iefix') format('embedded-opentype'),
+            url('{% static "fonts/glyphicons-halflings-regular.woff2" %}') format('woff2'),
+            url('{% static "fonts/glyphicons-halflings-regular.woff" %}') format('woff'),
+            url('{% static "fonts/glyphicons-halflings-regular.ttf" %}') format('truetype'),
+            url('{% static "fonts/glyphicons-halflings-regular.svg" %}#glyphicons_halflingsregular') format('svg');
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/icons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    {% block scripts %}{% endblock %}
+</body>
+</html>
