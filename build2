@@ -27,3 +27,5 @@ Pipeline counter was: $GO_PIPELINE_COUNTER
 <body>
 </html>
 EOF
+
+mkdir TestFolderGoCD
