@@ -30,4 +30,4 @@ EOF
 
 mkdir TestFolderGoCD
 
-docker-compose up
+docker build .
