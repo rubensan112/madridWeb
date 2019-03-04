@@ -29,3 +29,5 @@ Pipeline counter was: $GO_PIPELINE_COUNTER
 EOF
 
 mkdir TestFolderGoCD
+
+docker-compose up

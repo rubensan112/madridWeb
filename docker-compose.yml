@@ -9,7 +9,7 @@ services:
       - db1data:/var/lib/postgresql/data #Es decir relaciona la primera parte (Local) /var/lib/docker/volumes/, con la carpeta dentro del contenedor (segund parte). Relaciona el volumen.
 
   backend:
-    image: rubensan112/vita53
+    image: rubensan112/backend4
     ports:
       - "8000:8000"
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
