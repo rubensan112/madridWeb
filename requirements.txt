@@ -1,6 +1,7 @@
+psycopg2
 django
 djangorestframework
 django-webpack-loader
 coreapi
-psycopg2
 django-rest-swagger
+django-role-permissions

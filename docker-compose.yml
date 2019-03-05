@@ -9,18 +9,28 @@ services:
       - db1data:/var/lib/postgresql/data #Es decir relaciona la primera parte (Local) /var/lib/docker/volumes/, con la carpeta dentro del contenedor (segund parte). Relaciona el volumen.
 
   backend:
-    image: rubensan112/backend4
+    build:
+      context: .
+      dockerfile: Dockerfile-prod-back
+    image: rubensan112/backend5
     ports:
       - "8000:8000"
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code #Con esto, el docker ya tiene acceso dentro de /code a todos los ficheros del directorio actual
     depends_on:
       - db2
 
   frontend:
-    image: rubensan112/vita_front7
+    build:
+      context: .
+      dockerfile: Dockerfile-prod-front
+    image: rubensan112/vita_front8
     ports:
       - "8080:8080"
     command: bash -c "npm run devDocker"
+    volumes:
+      - ./frontend:/code/frontend #Con esto, el docker ya tiene acceso dentro de /code a todos los ficheros del directorio actual
 
 #Esta parte de abajo crea el volumen. Tambien se puede hacer por comandos.
 volumes:
