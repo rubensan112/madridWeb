@@ -1,33 +1,6 @@
 #!/bin/bash
 
-echo "Let us pretend that this is building something ... and takes 20 seconds"
+echo "Eliminate old images"
 
-count=0
-while [ "$count" -lt 5 ]; do
-    count=$((count + 1))
+sudo docker rmi $(sudo docker images -f "dangling=true" -q) --force
 
-    color_code=$((31 + (count % 7)))
-    printf "\e[01;${color_code}mBuilding [$count of 20]\e[00m\n"
-
-    sleep 1
-done
-
-cat >my-artifact2.html <<EOF
-<html>
-<body>
-<h3>An example artifact</h3>
-<pre>
-==== ==== ====
-An example artifact2, created on: $(date)
-
-Pipeline which created it: $GO_PIPELINE_NAME
-Pipeline counter was: $GO_PIPELINE_COUNTER
-==== ==== ====
-</pre>
-<body>
-</html>
-EOF
-
-mkdir TestFolderGoCD
-
-docker build .
