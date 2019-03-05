@@ -2,5 +2,5 @@
 
 echo "Eliminate old images"
 
-sudo docker rmi $(sudo docker images -f "dangling=true" -q) --force
+docker rmi $(sudo docker images -f "dangling=true" -q) --force
 
