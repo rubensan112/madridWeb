@@ -5,4 +5,3 @@ django-webpack-loader
 coreapi
 django-rest-swagger
 django-role-permissions
-celery
