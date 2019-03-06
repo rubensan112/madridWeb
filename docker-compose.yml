@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile-prod-back
     image: rubensan112/backend5
     ports:
-      - "8000:8000"
+      - "8080:8080"
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
     volumes:
       - .:/code #Con esto, el docker ya tiene acceso dentro de /code a todos los ficheros del directorio actual
@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile-prod-front
     image: rubensan112/vita_front8
     ports:
-      - "8080:8080"
+      - "443:443"
     command: bash -c "npm run devDocker"
     volumes:
       - ./frontend:/code/frontend #Con esto, el docker ya tiene acceso dentro de /code a todos los ficheros del directorio actual
