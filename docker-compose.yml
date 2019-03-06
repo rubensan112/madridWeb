@@ -15,7 +15,7 @@ services:
     image: rubensan112/backend5
     ports:
       - "8000:8000"
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
     volumes:
       - .:/code #Con esto, el docker ya tiene acceso dentro de /code a todos los ficheros del directorio actual
     depends_on:

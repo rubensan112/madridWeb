@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "test",
-    "dev": "webpack-dev-server",
-    "devDocker": "webpack-dev-server --host 0.0.0.0"
+    "dev": "webpack-dev-server --port 443",
+    "devDocker": "webpack-dev-server --host 0.0.0.0 --port 443"
   },
   "author": "",
   "license": "ISC",

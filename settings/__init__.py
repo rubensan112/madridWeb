@@ -2,10 +2,10 @@ import os
 
 try:
     ACTIVE_ENVIRONMENT = os.environ['VITA_ENVIRONMENT']
-    print("----Using %".format(os.environ['VITA_ENVIRONMENT']))
+    print("----Using {0} environment".format(ACTIVE_ENVIRONMENT))
 except:
     ACTIVE_ENVIRONMENT = 'dev'
-    print("No environment found. Using dev environment")
+    print("No environment found. Using {0} environment".format(ACTIVE_ENVIRONMENT))
 
 try:
     from .settings import *
