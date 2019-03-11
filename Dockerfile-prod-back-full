@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED 1
 #ENV VITA_ENVIRONMENT 'prod'
 ENV VITA_ENVIRONMENT 'kubernetes'
 
-COPY requirements.txt /code/
+COPY . /code/
 WORKDIR /code/
 
 

@@ -20,4 +20,4 @@ RUN npm install webpack -g
 
 #RUN npm run dev
 
-EXPOSE 8080
+EXPOSE 443
