@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-prod-back
-    image: rubensan112/backend13k
+    image: rubensan112/backend6k
     ports:
       - "8080:8080"
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"

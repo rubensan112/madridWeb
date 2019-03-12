@@ -2,7 +2,7 @@ FROM python:3.6
 
 ENV PYTHONUNBUFFERED 1
 #ENV VITA_ENVIRONMENT 'prod'
-ENV VITA_ENVIRONMENT 'kubernetes'
+#ENV VITA_ENVIRONMENT 'kubernetes'
 
 COPY requirements.txt /code/
 WORKDIR /code/
